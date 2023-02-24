@@ -11,6 +11,11 @@ public class HlavniProgram {
 
         zofka = new Turtle();
 
+        /*
+        vyzkoušení metody čvterce
+        nakresliCtverec(80);
+         */
+
         //kreslení mašinky
         zofka.setLocation(740,230);
         nakresliObdelnik(150,100, Color.MAGENTA);
@@ -48,12 +53,33 @@ public class HlavniProgram {
         nakresliKruh(3.4907);
 
         zofka.setLocation(465,230);
-
         nakresliKruh(3.4907);
 
+        //kresleni zmrzliny
+        zofka.setLocation(90,230);
+        nakresliTrojuhelnik(100);
+
+        zofka.setLocation(140,256);
+        nakresliKruh(10.472);
+
+        //umístění žofky mimo kresbu
+        zofka.turnLeft(90);
+        zofka.setLocation(140,400);
 
     }
 
+    private void nakresliCtverec(double strana) {
+        for (int i = 0; i < 4; i++) {
+            zofka.move(strana);
+            zofka.turnLeft(90);
+        }
+    }
+    private void nakresliTrojuhelnik(double strana) {
+        for (int i = 0; i < 3; i++) {
+            zofka.move(strana);
+            zofka.turnRight(120);
+        }
+    }
     private void nakresliKruh(double vysec) {
         for (int i = 0; i < 36; i++) {
             zofka.turnLeft(10);
